@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+.pioenvs
+.vscode
+.piolibdeps
+include
+test
