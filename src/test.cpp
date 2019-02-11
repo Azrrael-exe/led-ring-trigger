@@ -62,7 +62,7 @@ void loop() {
   if(rotary_pos != dip.getPosition()){
     rotary_pos = dip.getPosition();
     char buffer[100];
-    sprintf(buffer, "Rotary: %d");
+    sprintf(buffer, "Rotary: %d", rotary_pos);
     Serial.println(buffer);
   }
   if(digitalRead(INPUT_BUTTON)){
