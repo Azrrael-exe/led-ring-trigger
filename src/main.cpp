@@ -45,9 +45,7 @@ void loop() {
       long timer = millis();
       pixels.setPixelColor(i, 0x00000000);
       pixels.show();
-      while(millis ()- timer >= step){
-        ; // Waiting! :) 
-      }
+      delay(step);
     }
 
     // --- Step Tree: Trigger the Camera
