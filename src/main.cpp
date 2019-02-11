@@ -34,7 +34,7 @@ void loop() {
       ;
     }
     // --- Step Zero: Calculate timers
-    uint8_t total_time = 4 + dip.getPosition();         // Total time of the process
+    uint8_t total_time = (4 + dip.getPosition())*1000;         // Total time of the process
     float step = float(PIXEL_COUNT)/float(total_time);  // Time of each step
     
     // --- Step One: Set all Green
@@ -45,9 +45,7 @@ void loop() {
       long timer = millis();
       pixels.setPixelColor(i, 0x00000000);
       pixels.show();
-      while(millis ()- timer >= step){
-        ; // Waiting! :) 
-      }
+      delay(step);
     }
 
     // --- Step Tree: Trigger the Camera
