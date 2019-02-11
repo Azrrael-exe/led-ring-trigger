@@ -34,8 +34,8 @@ void loop() {
       ;
     }
     // --- Step Zero: Calculate timers
-    uint8_t total_time = (4 + dip.getPosition())*1000;  // Total time of the process
-    float step = float(PIXEL_COUNT)/float(total_time);  // Time of each step
+    long total_time = (4 + dip.getPosition())*1000;  // Total time of the process
+    float step = float(total_time)/float(PIXEL_COUNT);  // Time of each step
     
     // --- Step One: Set all Green
     setAll(pixels, 0x00006400);                         // Set all to Green
