@@ -3,14 +3,14 @@
 #include "rotary.h"
 #include "pixels.h"
 
-#define PIXEL_COUNT 24
-#define PIXEL_PIN 3
+#define PIXEL_COUNT 16
+#define PIXEL_PIN 8
 #define P1 4
 #define P2 5
 #define P3 6
 #define P4 7
-#define INPUT_BUTTON 11
-#define TRIGGER_OUTPUT 12
+#define INPUT_BUTTON 9
+#define TRIGGER_OUTPUT 10
 
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(PIXEL_COUNT, PIXEL_PIN, NEO_GRB + NEO_KHZ800);
 Rotary dip = Rotary(P1, P2, P3, P4);
@@ -26,6 +26,7 @@ void setup() {
   setAll(pixels, 0x000000FF);
   delay(100);
   setAll(pixels, 0x00000000);
+  digitalWrite(TRIGGER_OUTPUT,1);
 }
 
 void loop() {
@@ -48,8 +49,8 @@ void loop() {
     }
 
     // --- Step Tree: Trigger the Camera
-    digitalWrite(TRIGGER_OUTPUT, 1);
+    digitalWrite(TRIGGER_OUTPUT, 0);
     delay(350);
-    digitalWrite(TRIGGER_OUTPUT,0);
+    digitalWrite(TRIGGER_OUTPUT,1);
   }
 }
