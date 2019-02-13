@@ -26,7 +26,7 @@ void setup() {
   setAll(pixels, 0x000000FF);
   delay(100);
   setAll(pixels, 0x00000000);
-  digitalWrite(TRIGGER_OUTPUT,1);
+  digitalWrite(TRIGGER_OUTPUT,0);
 }
 
 void loop() {
@@ -49,8 +49,8 @@ void loop() {
     }
 
     // --- Step Tree: Trigger the Camera
-    digitalWrite(TRIGGER_OUTPUT, 0);
+    digitalWrite(TRIGGER_OUTPUT, 1);
     delay(350);
-    digitalWrite(TRIGGER_OUTPUT,1);
+    digitalWrite(TRIGGER_OUTPUT,0);
   }
 }
